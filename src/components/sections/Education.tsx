@@ -8,7 +8,7 @@ export function Education() {
         <SectionHeading
           id="formacion"
           title="Formación y experiencia"
-          subtitle="De lo más reciente a lo más antiguo"
+          subtitle="¿Por qué decidí estudiar DAM tras más de 8 años en el sector del fitness? Renovarse o morir."
         />
         <InteractiveTimeline />
       </div>

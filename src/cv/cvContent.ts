@@ -5,6 +5,10 @@ export function getCvContactLines(): { label: string; value: string }[] {
   const lines: { label: string; value: string }[] = [
     { label: "Email", value: profile.email },
     { label: "Ubicación", value: profile.location },
+    {
+      label: "Disponibilidad",
+      value: profile.workAvailability.short,
+    },
   ];
 
   if (profile.whatsapp) {

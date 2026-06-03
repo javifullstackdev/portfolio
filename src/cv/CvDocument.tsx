@@ -1,5 +1,8 @@
 import { Document, Link, Page, Text, View } from "@react-pdf/renderer";
-import { certifications } from "@/data/certifications";
+import {
+  certifications,
+  isCertificationsSectionVisible,
+} from "@/data/certifications";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
@@ -108,7 +111,6 @@ export function CvDocument() {
           <TimelineBlock entries={education} />
         </View>
 
-        {/* Salto de página: proyectos + certificaciones enteros en pág. 2 */}
         <View break>
           <View style={s.section}>
             <Text style={s.sectionTitle}>Proyectos destacados</Text>
@@ -133,7 +135,7 @@ export function CvDocument() {
             ))}
           </View>
 
-          {certifications.length > 0 ? (
+          {isCertificationsSectionVisible() ? (
             <View style={s.section}>
               <Text style={s.sectionTitle}>Certificaciones</Text>
               {certifications.map((cert) => (
@@ -145,7 +147,9 @@ export function CvDocument() {
                     </Text>
                     <Text style={s.entryPeriod}>{cert.date}</Text>
                   </View>
-                  <Text style={s.entryOrg}>{cert.issuer}</Text>
+                  <Text style={s.entryOrg}>
+                    {cert.kind} · {cert.issuer}
+                  </Text>
                 </View>
               ))}
             </View>

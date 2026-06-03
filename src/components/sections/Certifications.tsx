@@ -1,9 +1,12 @@
-import { certifications } from "@/data/certifications";
+import {
+  certifications,
+  isCertificationsSectionVisible,
+} from "@/data/certifications";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CertificationCard } from "@/components/ui/CertificationCard";
 
 export function Certifications() {
-  if (certifications.length === 0) {
+  if (!isCertificationsSectionVisible()) {
     return null;
   }
 
@@ -13,9 +16,9 @@ export function Certifications() {
         <SectionHeading
           id="certificaciones"
           title="Certificaciones"
-          subtitle="Porque la formación nunca termina"
+          subtitle="No son certificaciones oficiales, pero... ¡muestran hacia dónde me gustaría avanzar!"
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {certifications.map((cert, index) => (
             <CertificationCard
               key={cert.id}

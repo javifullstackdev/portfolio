@@ -9,7 +9,14 @@ export function About() {
         <SectionHeading
           id="sobre-mi"
           title="Sobre mí"
-          subtitle="Algunos detalles sobre quién soy y qué objetivos tengo"
+          subtitle={
+            <>
+              <span className="block sm:inline">Algunos detalles sobre</span>{" "}
+              <span className="block sm:inline">
+                quién soy y qué objetivos tengo
+              </span>
+            </>
+          }
         />
         <div className="grid gap-6 md:grid-cols-3">
           {aboutCards.map((card, index) => (

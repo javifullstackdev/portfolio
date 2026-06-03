@@ -7,8 +7,8 @@ const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-gradient-to-r from-cyan-400 to-violet-400 text-zinc-950 font-semibold hover:opacity-90 shadow-lg shadow-cyan-500/20",
   secondary:
-    "border border-white/15 bg-white/5 text-foreground hover:border-cyan-400/40 hover:bg-white/10",
-  ghost: "text-muted hover:text-foreground hover:bg-white/5",
+    "border border-border-subtle bg-surface-muted text-foreground hover:border-cyan-400/40 hover:bg-hover",
+  ghost: "text-muted hover:text-foreground hover:bg-surface-muted",
 };
 
 const baseClasses =

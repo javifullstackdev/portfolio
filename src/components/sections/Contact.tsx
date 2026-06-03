@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 export function Contact() {
   const mailtoSubject = encodeURIComponent("Contacto desde portfolio");
   const mailtoBody = encodeURIComponent(
-    "Hola, he visto tu portfolio y me gustaría contactar contigo",
+    "¡Hola Javi!, he visto tu portfolio y me gustaría contactar contigo",
   );
   const mailtoHref = `mailto:${profile.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
   return (
@@ -20,10 +20,11 @@ export function Contact() {
           subtitle="¿Tienes una vacante junior o quieres hablar de un proyecto? ¡Escríbeme!"
         />
         <FadeIn>
-          <div className="card-glow mx-auto max-w-xl rounded-2xl border border-white/10 bg-card p-8 text-center sm:p-10">
-            <p className="text-muted">
-              También puedes encontrarme en:
+          <div className="card-glow mx-auto max-w-xl rounded-2xl border border-border-subtle bg-card p-8 text-center sm:p-10">
+            <p className="text-sm leading-relaxed text-muted">
+              {profile.workAvailability.detail}
             </p>
+            <p className="mt-6 text-muted">Puedes hacerlo a través de:</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
               <Button href={mailtoHref} variant="primary">
                 <Mail className="h-4 w-4" />

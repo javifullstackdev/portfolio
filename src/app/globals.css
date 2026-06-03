@@ -1,16 +1,56 @@
 @import "tailwindcss";
 
-:root {
+/* Tema oscuro (por defecto) */
+:root,
+html[data-theme="dark"] {
+  color-scheme: dark;
   --background: #06060f;
   --foreground: #f0f0f5;
   --muted: #9494a8;
   --card: #0e0e1a;
   --card-border: rgba(255, 255, 255, 0.08);
+  --surface-muted: rgba(255, 255, 255, 0.05);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(6, 6, 15, 0.75);
+  --grid-line: rgba(255, 255, 255, 0.03);
+  --divider: rgba(255, 255, 255, 0.1);
+  --separator: rgba(255, 255, 255, 0.25);
+  --timeline-line-from: rgba(255, 255, 255, 0.2);
+  --timeline-line-via: rgba(255, 255, 255, 0.1);
+  --timeline-line-accent: rgba(255, 255, 255, 0.12);
   --accent-cyan: #22d3ee;
   --accent-violet: #a78bfa;
   --accent-gradient: linear-gradient(135deg, #22d3ee 0%, #a78bfa 100%);
   --glow-cyan: rgba(34, 211, 238, 0.15);
   --glow-violet: rgba(167, 139, 250, 0.12);
+  --selection-bg: rgba(34, 211, 238, 0.25);
+  --orb-opacity: 1;
+}
+
+/* Tema claro */
+html[data-theme="light"] {
+  color-scheme: light;
+  --background: #f0f4fa;
+  --foreground: #0c1222;
+  --muted: #5c6478;
+  --card: #ffffff;
+  --card-border: rgba(12, 18, 34, 0.1);
+  --surface-muted: rgba(12, 18, 34, 0.04);
+  --hover-bg: rgba(12, 18, 34, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --grid-line: rgba(12, 18, 34, 0.07);
+  --divider: rgba(12, 18, 34, 0.1);
+  --separator: rgba(12, 18, 34, 0.22);
+  --timeline-line-from: rgba(8, 145, 178, 0.35);
+  --timeline-line-via: rgba(12, 18, 34, 0.12);
+  --timeline-line-accent: rgba(12, 18, 34, 0.1);
+  --accent-cyan: #0891b2;
+  --accent-violet: #7c3aed;
+  --accent-gradient: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+  --glow-cyan: rgba(8, 145, 178, 0.18);
+  --glow-violet: rgba(124, 58, 237, 0.12);
+  --selection-bg: rgba(8, 145, 178, 0.22);
+  --orb-opacity: 0.45;
 }
 
 @theme inline {
@@ -18,6 +58,10 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-card: var(--card);
+  --color-border-subtle: var(--card-border);
+  --color-surface-muted: var(--surface-muted);
+  --color-hover: var(--hover-bg);
+  --color-divider: var(--divider);
   --color-accent-cyan: var(--accent-cyan);
   --color-accent-violet: var(--accent-violet);
   --font-sans: var(--font-geist-sans);
@@ -34,6 +78,14 @@ html {
   }
 }
 
+html,
+body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -41,20 +93,20 @@ body {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
+  background: var(--selection-bg);
   color: var(--foreground);
 }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 70%);
 }
 
 .glass {
-  background: rgba(6, 6, 15, 0.75);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--card-border);
 }
@@ -71,12 +123,26 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   pointer-events: none;
+  opacity: var(--orb-opacity);
+  transition: opacity 0.35s ease;
+}
+
+.card-glow {
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .card-glow:hover {
   box-shadow:
     0 0 0 1px rgba(34, 211, 238, 0.2),
     0 8px 32px var(--glow-cyan);
+}
+
+html[data-theme="light"] .card-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(8, 145, 178, 0.25),
+    0 8px 28px var(--glow-cyan);
 }
 
 .section-container {
@@ -88,5 +154,5 @@ body {
 }
 
 .section-subtitle {
-  @apply mt-3 max-w-2xl text-muted text-lg leading-relaxed;
+  @apply mt-3 max-w-5xl text-muted text-lg leading-relaxed;
 }

@@ -75,6 +75,25 @@ export const accentTab: Record<
   },
 };
 
+/** Pills de tecnologías (proyectos, etc.) alineadas con cada categoría de skills */
+export const accentPill: Record<Accent, string> = {
+  cyan: "border-cyan-400/45 bg-cyan-400/10 text-cyan-300",
+  sky: "border-sky-400/45 bg-sky-400/10 text-sky-300",
+  teal: "border-teal-400/45 bg-teal-400/10 text-teal-300",
+  fuchsia: "border-fuchsia-400/45 bg-fuchsia-400/10 text-fuchsia-300",
+  purple: "border-purple-400/45 bg-purple-400/10 text-purple-300",
+  violet: "border-violet-400/45 bg-violet-400/10 text-violet-300",
+};
+
+export const accentLink: Record<Accent, string> = {
+  cyan: "hover:text-cyan-400 focus-visible:outline-cyan-400",
+  sky: "hover:text-sky-400 focus-visible:outline-sky-400",
+  teal: "hover:text-teal-400 focus-visible:outline-teal-400",
+  fuchsia: "hover:text-fuchsia-400 focus-visible:outline-fuchsia-400",
+  purple: "hover:text-purple-400 focus-visible:outline-purple-400",
+  violet: "hover:text-violet-400 focus-visible:outline-violet-400",
+};
+
 export const accentAbout: Record<
   Accent,
   {
@@ -105,25 +124,25 @@ export const accentAbout: Record<
       "transition-[box-shadow,border-color] duration-300 hover:border-sky-400/50 hover:shadow-lg hover:shadow-sky-400/35",
   },
   fuchsia: {
-    border: "border-yellow-400/25",
+    border: "border-fuchsia-400/25",
     bar: "from-fuchsia-400 via-fuchsia-400/50 to-transparent",
     iconWrap: "bg-fuchsia-400/25 ring-1 ring-fuchsia-400/40",
     icon: "text-fuchsia-400",
     title: "text-fuchsia-400",
     hover:
-      "transition-[box-shadow,border-color] duration-300 hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-400/35",
+      "transition-[box-shadow,border-color] duration-300 hover:border-fuchsia-400/50 hover:shadow-lg hover:shadow-fuchsia-400/35",
   },
   purple: {
-    border: "border-fuchsia-400/25",
+    border: "border-purple-400/25",
     bar: "from-purple-400 via-purple-400/50 to-transparent",
     iconWrap: "bg-purple-400/25 ring-1 ring-purple-400/40",
     icon: "text-purple-400",
     title: "text-purple-400",
     hover:
-      "transition-[box-shadow,border-color] duration-300 hover:border-fuchsia-400/50 hover:shadow-lg hover:shadow-fuchsia-400/35",
+      "transition-[box-shadow,border-color] duration-300 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/35",
   },
   violet: {
-    border: "border-orange-400/25",
+    border: "border-violet-400/25",
     bar: "from-violet-400 via-violet-400/50 to-transparent",
     iconWrap: "bg-violet-400/25 ring-1 ring-violet-400/40",
     icon: "text-violet-400",

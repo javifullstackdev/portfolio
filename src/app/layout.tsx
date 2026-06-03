@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ThemeScript } from "@/components/theme/ThemeScript";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
@@ -16,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Desarrollador DAM recién titulado. Portfolio y CV dinámico con proyectos full-stack, backend y frontend. Buscando primera oportunidad en el sector tech.";
+  "Desarrollador DAM recién titulado en Benalmádena (Málaga). Portfolio y CV con proyectos full-stack. Disponible remoto en España o híbrido/presencial en Málaga.";
 
 export const metadata: Metadata = {
   title: {
@@ -60,12 +62,17 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      data-theme="dark"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ThemeScript />
+        <ThemeProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

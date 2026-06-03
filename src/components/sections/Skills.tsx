@@ -16,8 +16,8 @@ export function Skills() {
       <div className="section-container relative">
         <SectionHeading
           id="skills"
-          title="Stack técnico"
-          subtitle="Tecnologías que uso y en las que sigo formándome"
+          title="Stack tecnológico"
+          subtitle="Tecnologías que uso actualmente y en las que cada día sigo formándome"
         />
         <FadeIn>
           <SkillsExplorer />

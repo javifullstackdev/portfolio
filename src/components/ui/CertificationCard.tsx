@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Award, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { Badge } from "@/components/ui/Badge";
+import { accentAbout, accentLink, accentPill } from "@/lib/accents";
+import { certificationIcons } from "@/lib/certificationIcons";
+import { cn } from "@/lib/utils";
 import type { Certification } from "@/data/certifications";
 
 type CertificationCardProps = {
@@ -15,19 +17,40 @@ export function CertificationCard({
   certification,
   index = 0,
 }: CertificationCardProps) {
-  const { title, issuer, date, credentialUrl, badgeImage, skills, inProgress } =
-    certification;
+  const {
+    kind,
+    title,
+    issuer,
+    date,
+    accent,
+    icon,
+    credentialUrl,
+    badgeImage,
+    skills,
+    inProgress,
+  } = certification;
+
+  const styles = accentAbout[accent];
+  const Icon = certificationIcons[icon];
 
   return (
     <FadeIn delay={index * 0.08}>
-      <article className="card-glow group flex h-full flex-col rounded-2xl border border-white/10 bg-card p-5 transition-all duration-300 sm:p-6">
+      <article
+        className={cn(
+          "card-glow group flex h-full flex-col rounded-2xl border bg-card p-5 transition-all duration-300 sm:p-6",
+          styles.border,
+          styles.hover,
+          inProgress && "border-violet-400/25",
+        )}
+      >
         <div className="flex gap-4">
           <div
-            className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border ${
+            className={cn(
+              "flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl",
               inProgress
-                ? "border-violet-400/30 bg-violet-400/10"
-                : "border-cyan-400/30 bg-cyan-400/10"
-            }`}
+                ? "bg-violet-400/25 ring-1 ring-violet-400/40"
+                : styles.iconWrap,
+            )}
           >
             {badgeImage ? (
               <Image
@@ -38,25 +61,47 @@ export function CertificationCard({
                 className="h-full w-full object-cover"
               />
             ) : (
-              <Award
-                className={`h-6 w-6 ${inProgress ? "text-violet-400" : "text-cyan-400"}`}
+              <Icon
+                className={cn(
+                  "h-6 w-6",
+                  inProgress ? "text-violet-400" : styles.icon,
+                )}
                 aria-hidden
               />
             )}
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-mono text-xs text-cyan-400/90">{date}</span>
+              <span
+                className={cn(
+                  "font-mono text-xs",
+                  inProgress ? "text-violet-400/90" : styles.icon,
+                )}
+              >
+                {date}
+              </span>
               {inProgress && (
-                <Badge variant="accent" className="text-[10px]">
+                <span className="rounded-full border border-violet-400/45 bg-violet-400/10 px-2 py-0.5 font-mono text-[10px] text-violet-300">
                   En curso
-                </Badge>
+                </span>
               )}
             </div>
-            <h3 className="mt-1 font-semibold leading-snug text-foreground group-hover:text-cyan-300 transition-colors">
+            <h2 className="mt-2 font-mono text-[11px] font-medium uppercase tracking-wider text-muted">
+              {kind}
+            </h2>
+            <p
+              className={cn(
+                "mt-1 text-lg font-semibold leading-snug transition-colors sm:text-xl",
+                inProgress
+                  ? "text-foreground group-hover:text-violet-300"
+                  : cn(styles.title, "group-hover:brightness-125"),
+              )}
+            >
               {title}
-            </h3>
-            <p className="mt-0.5 text-sm text-violet-300/90">{issuer}</p>
+            </p>
+            <p className="mt-1 text-sm text-violet-700/90 dark:text-violet-300/90">
+              {issuer}
+            </p>
           </div>
         </div>
 
@@ -64,7 +109,14 @@ export function CertificationCard({
           <ul className="mt-4 flex flex-wrap gap-2">
             {skills.map((skill) => (
               <li key={skill}>
-                <Badge className="font-mono text-[11px]">{skill}</Badge>
+                <span
+                  className={cn(
+                    "inline-flex items-center rounded-full border px-3 py-1 font-mono text-[11px] font-medium",
+                    accentPill[accent],
+                  )}
+                >
+                  {skill}
+                </span>
               </li>
             ))}
           </ul>
@@ -75,7 +127,10 @@ export function CertificationCard({
             href={credentialUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-cyan-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 rounded"
+            className={cn(
+              "mt-4 inline-flex items-center gap-1.5 rounded text-sm text-muted transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+              accentLink[accent],
+            )}
           >
             <ExternalLink className="h-4 w-4" />
             Ver credencial

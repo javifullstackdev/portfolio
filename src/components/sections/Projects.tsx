@@ -9,7 +9,7 @@ export function Projects() {
         <SectionHeading
           id="proyectos"
           title="Proyectos"
-          subtitle="Todo lo aprendido, aplicado en mis prácticas"
+          subtitle="Mi portfolio personal y los proyectos reales en los que trabajé durante mis prácticas en Upgrade Hub"
         />
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (

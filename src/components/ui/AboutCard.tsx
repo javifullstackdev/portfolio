@@ -10,6 +10,36 @@ const icons: Record<AboutCard["icon"], LucideIcon> = {
   target: Target,
 };
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function AboutDescription({
+  text,
+  emphasis,
+}: {
+  text: string;
+  emphasis?: readonly string[];
+}) {
+  if (!emphasis?.length) return text;
+
+  const pattern = new RegExp(
+    `(${emphasis.map(escapeRegExp).join("|")})`,
+    "gi",
+  );
+  const emphasisLower = new Set(emphasis.map((p) => p.toLowerCase()));
+
+  return text.split(pattern).filter(Boolean).map((part, i) =>
+    emphasisLower.has(part.toLowerCase()) ? (
+      <strong key={`${part}-${i}`} className="font-semibold text-foreground/90">
+        {part}
+      </strong>
+    ) : (
+      <span key={`${part}-${i}`}>{part}</span>
+    ),
+  );
+}
+
 type AboutCardProps = {
   card: AboutCard;
   index?: number;
@@ -52,7 +82,10 @@ export function AboutCard({ card, index = 0 }: AboutCardProps) {
           {card.title}
         </h3>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted sm:text-base">
-          {card.description}
+          <AboutDescription
+            text={card.description}
+            emphasis={card.emphasis}
+          />
         </p>
       </article>
     </FadeIn>

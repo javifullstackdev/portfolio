@@ -27,34 +27,34 @@ const typeConfig: Record<
     Icon: GraduationCap,
     dot: "border-sky-400/60 bg-sky-400/15 text-sky-400",
     card: cn(
-      "border-white/10",
+      "border-border-subtle",
       "transition-[box-shadow,border-color,transform] duration-300 ease-out",
       "hover:border-sky-400/50 hover:shadow-lg hover:shadow-sky-400/35",
       "md:hover:scale-[1.01] motion-reduce:md:hover:scale-100",
     ),
-    org: "text-cyan-300/90",
+    org: "text-cyan-700/90 dark:text-cyan-300/90",
   },
   experience: {
     Icon: Briefcase,
     dot: "border-cyan-400/60 bg-cyan-400/15 text-cyan-400",
     card: cn(
-      "border-white/10",
+      "border-border-subtle",
       "transition-[box-shadow,border-color,transform] duration-300 ease-out",
       "hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/35",
       "md:hover:scale-[1.01] motion-reduce:md:hover:scale-100",
     ),
-    org: "text-cyan-300/90",
+    org: "text-cyan-700/90 dark:text-cyan-300/90",
   },
   other: {
     Icon: Dumbbell,
     dot: "border-violet-400/60 bg-violet-400/15 text-violet-400",
     card: cn(
-      "border-white/10",
+      "border-border-subtle",
       "transition-[box-shadow,border-color,transform] duration-300 ease-out",
       "hover:border-violet-400/50 hover:shadow-lg hover:shadow-violet-400/35",
       "md:hover:scale-[1.01] motion-reduce:md:hover:scale-100",
     ),
-    org: "text-violet-300/90",
+    org: "text-violet-700/90 dark:text-violet-300/90",
   },
 };
 
@@ -97,7 +97,7 @@ function TimelineRow({
         <div className="relative z-10 flex w-11 shrink-0 flex-col items-center overflow-visible">
           {!isLast && (
             <span
-              className="absolute top-11 bottom-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-white/20 via-white/10 to-transparent"
+              className="absolute top-11 bottom-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-[var(--timeline-line-from)] via-[var(--timeline-line-via)] to-transparent"
               aria-hidden
             />
           )}
@@ -116,7 +116,7 @@ function TimelineRow({
           className={cn(
             "relative mb-5 flex w-full min-w-0 flex-1 flex-col overflow-hidden rounded-xl border bg-card/90 sm:mb-6",
             "md:origin-left",
-            isOpen && "border-white/20",
+            isOpen && "border-divider",
             "hover:z-20",
             card,
           )}
@@ -139,7 +139,7 @@ function TimelineRow({
                 {entry.organization}
               </h2>
             </header>
-            <p className="border-t border-white/10 px-5 py-3.5 text-sm leading-relaxed text-muted">
+            <p className="border-t border-divider px-5 py-3.5 text-sm leading-relaxed text-muted">
               {entry.description}
             </p>
           </div>
@@ -180,7 +180,7 @@ function TimelineRow({
             )}
           >
             <div className="overflow-hidden">
-              <p className="border-t border-white/10 px-3.5 py-2.5 text-xs leading-relaxed text-muted sm:px-4 sm:py-3">
+              <p className="border-t border-divider px-3.5 py-2.5 text-xs leading-relaxed text-muted sm:px-4 sm:py-3">
                 {entry.description}
               </p>
             </div>
@@ -201,7 +201,7 @@ export function InteractiveTimeline() {
   return (
     <div className="relative max-w-5xl overflow-visible pl-0.5">
       <span
-        className="pointer-events-none absolute bottom-0 left-[22px] top-3 w-px bg-gradient-to-b from-cyan-400/35 via-white/12 to-transparent"
+        className="pointer-events-none absolute bottom-0 left-[22px] top-3 w-px bg-gradient-to-b from-cyan-400/35 via-[var(--timeline-line-accent)] to-transparent"
         aria-hidden
       />
 

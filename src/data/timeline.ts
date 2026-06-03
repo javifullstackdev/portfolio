@@ -7,9 +7,7 @@ export type TimelineEntry = {
   type: "education" | "experience" | "other";
 };
 
-/**
- * Orden: más reciente arriba, más antiguo abajo (se muestra en columna).
- */
+
 export const timeline: TimelineEntry[] = [
   {
     id: "practicas",
@@ -17,7 +15,7 @@ export const timeline: TimelineEntry[] = [
     title: "Prácticas en empresa",
     organization: "Naviria Labs",
     description:
-      "Participación en el ciclo de desarrollo: revisiones de código, tareas en backlog y colaboración con el equipo técnico.",
+      "Como parte del equipo de Naviria Labs, participé en el diseño íntegro del blog Insights de Upgrade Hub y en el desarrollo de la landing page para la formación tech de los miembros del CSIC (Consejo Superior de Investigaciones Científicas).",
     type: "experience",
   },
   {
@@ -26,7 +24,7 @@ export const timeline: TimelineEntry[] = [
     title: "Grado Superior DAM",
     organization: "Upgrade Hub",
     description:
-      "Desarrollo de Aplicaciones Multiplataforma: programación orientada a objetos, bases de datos, desarrollo web y móvil, entornos de desarrollo, proyectos en equipo y prácticas en empresa.",
+      "Después de tantos años trabajando en el sector del fitness, decidí dar un giro a mi carrera y dedicarme al desarrollo de software. En el grado superior de DAM me he formado en el desarrollo web y móvil, programación orientada a objetos con Java y Python, bases de datos y entornos de desarrollo.",
     type: "education",
   },
   {

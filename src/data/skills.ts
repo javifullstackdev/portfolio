@@ -20,10 +20,12 @@ export const skillCategories: SkillCategory[] = [
     title: "Lenguajes",
     accent: "teal",
     items: [
+      { name: "HTML5", level: "intermedio" },
+      { name: "CSS3", level: "intermedio" },
+      { name: "JavaScript", level: "intermedio" },
+      { name: "TypeScript", level: "intermedio" },
       { name: "Java", level: "intermedio" },
       { name: "Python", level: "aprendiendo" },
-      { name: "TypeScript", level: "intermedio" },
-      { name: "JavaScript", level: "intermedio" },
       { name: "SQL", level: "intermedio" },
     ],
   },
@@ -33,6 +35,7 @@ export const skillCategories: SkillCategory[] = [
     items: [
       { name: "React", level: "intermedio" },
       { name: "Next.js", level: "intermedio" },
+      { name: "Tailwind CSS", level: "intermedio" },
       { name: "Spring Boot", level: "intermedio" },
       { name: "Android Studio", level: "aprendiendo" },
     ],

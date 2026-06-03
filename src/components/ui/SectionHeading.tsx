@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 type SectionHeadingProps = {
   id?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   className?: string;
 };
 

@@ -12,7 +12,6 @@ type SkillLevelIconProps = {
   level: SkillLevel;
   className?: string;
   iconClassName?: string;
-  /** En píldoras (blanco); en leyenda (gris del panel). */
   variant?: "pill" | "legend";
 };
 
@@ -27,7 +26,7 @@ export function SkillLevelIcon({
   const filledStar =
     variant === "pill" ? "fill-current text-white" : "fill-current text-muted";
   const emptyStar =
-    variant === "pill" ? "text-white/25" : "text-muted/35";
+    variant === "pill" ? "text-muted/40" : "text-muted/35";
 
   return (
     <span
