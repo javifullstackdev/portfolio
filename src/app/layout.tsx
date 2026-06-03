@@ -20,7 +20,13 @@ const geistMono = Geist_Mono({
 const siteDescription =
   "Desarrollador DAM recién titulado en Benalmádena (Málaga). Portfolio y CV con proyectos full-stack. Disponible remoto en España o híbrido/presencial en Málaga.";
 
+const rawSiteUrl = profile.portfolioUrl || "https://javifullstackdev.vercel.app";
+const siteUrl = rawSiteUrl.startsWith("http")
+  ? rawSiteUrl
+  : `https://${rawSiteUrl}`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${profile.name} | Desarrollador DAM`,
     template: `%s | ${profile.name}`,

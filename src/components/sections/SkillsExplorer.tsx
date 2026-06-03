@@ -105,7 +105,16 @@ export function SkillsExplorer() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
+  const [allowAutoPlay, setAllowAutoPlay] = useState(false);
   const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setAllowAutoPlay(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
   const active = skillCategories[activeIndex];
   const count = skillCategories.length;
 
@@ -124,13 +133,12 @@ export function SkillsExplorer() {
   }, [count]);
 
   useEffect(() => {
-    if (prefersReducedMotion || paused || count <= 1) return;
+    if (!allowAutoPlay || prefersReducedMotion || paused || count <= 1) return;
 
     const timer = window.setInterval(goToNext, CAROUSEL_INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [activeIndex, paused, prefersReducedMotion, goToNext, count]);
+  }, [allowAutoPlay, paused, prefersReducedMotion, goToNext, count]);
 
-  /** Solo desplaza la barra horizontal de pestañas; no hace scroll de la página. */
   useEffect(() => {
     const container = tabListRef.current;
     const tab = document.getElementById(`skill-tab-${activeIndex}`);
@@ -198,7 +206,7 @@ export function SkillsExplorer() {
         id={`skill-panel-${activeIndex}`}
         aria-labelledby={`skill-tab-${activeIndex}`}
         aria-live="polite"
-        className="overflow-hidden"
+        className="min-h-[22rem] overflow-hidden [overflow-anchor:none] sm:min-h-[24rem]"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}

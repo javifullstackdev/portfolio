@@ -13,12 +13,5 @@ export function getStoredTheme(): Theme | null {
 }
 
 export function resolveTheme(): Theme {
-  const stored = getStoredTheme();
-  if (stored) return stored;
-  if (typeof window !== "undefined") {
-    return window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
-  }
-  return "dark";
+  return getStoredTheme() ?? "dark";
 }

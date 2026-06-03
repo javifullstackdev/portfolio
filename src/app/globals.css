@@ -72,6 +72,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Evita saltos de scroll cuando el contenido encima cambia de altura (p. ej. Skills). */
+main {
+  overflow-anchor: auto;
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -25,7 +25,7 @@ export const profile = {
     "¡Hola Javi! te escribo desde tu portfolio. Me gustaría contactar contigo",
   github: "https://github.com/javifullstackdev",
   linkedin: "https://linkedin.com/in/javifullstackdev",
-  portfolioUrl: "",
+  portfolioUrl: "https://javifullstackdev.vercel.app",
   cvUrl: "/api/cv",
 } as const;
 
