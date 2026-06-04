@@ -9,12 +9,13 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 
-const TAGLINE_EMPHASIS = /(inteligencia artificial|ciberseguridad)/gi;
+const TAGLINE_EMPHASIS =
+  /(madurez profesional|visión de producto)/gi;
 const TAGLINE_LINE2_SPLIT = " sobre ";
 
 function isTaglineEmphasis(part: string) {
   const lower = part.toLowerCase();
-  return lower === "inteligencia artificial" || lower === "ciberseguridad";
+  return lower === "ciberseguridad" || lower === "madurez profesional" || lower === "visión de producto";
 }
 
 function TaglineLine({ text }: { text: string }) {
@@ -193,6 +194,9 @@ export function Hero() {
               <span className="block lg:whitespace-nowrap">
                 <TaglineLine text={line2Lead} />
                 <TaglineLine text={line2Tail} />
+              </span>
+              <span className="block">
+                <TaglineLine text={profile.taglineLines[2]} />
               </span>
             </p>
 

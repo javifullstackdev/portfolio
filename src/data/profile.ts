@@ -9,8 +9,9 @@ export const profile = {
   badge: "Jr Full Stack Developer",
   badgeMobile: "Jr Full Stack Dev",
   taglineLines: [
-    "Acabo de terminar el grado superior de DAM y busco mi primer trabajo como desarrollador en un equipo de verdad.",
-    "Me apasiona el desarrollo full-stack y me encantaría formarme en Inteligencia Artificial y Ciberseguridad.",
+    "De gestionar operativas y equipos a construir soluciones de software.",
+    "Tras graduarme en DAM, busco aportar mi madurez profesional y mi visión de producto a un equipo tecnológico.",
+    "Me apasiona el desarrollo web, la automatización y explorar cómo integrar la Inteligencia Artificial en el día a día.",
   ] as const,
   graduation: "Grado Superior DAM — Junio 2026",
   location: "Benalmádena (Málaga)",
