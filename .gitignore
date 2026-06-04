@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Guía privada de entrevista (solo local, no subir a GitHub)
+_privado/

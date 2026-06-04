@@ -32,11 +32,11 @@ export const profile = {
 
 export const navLinks = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#skills", label: "Skills" },
-  { href: "#certificaciones", label: "Certificaciones" },
   { href: "#proyectos", label: "Proyectos" },
+  { href: "#skills", label: "Skills" },
   { href: "#formacion", label: "Formación" },
+  { href: "#certificaciones", label: "Certificaciones" },
+  { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#contacto", label: "Contacto" },
 ] as const;
 

@@ -12,26 +12,23 @@ export type AboutCard = {
 
 export const aboutCards: AboutCard[] = [
   {
-    title: "Formación DAM",
+    title: "De la gestión al código",
     description:
-      "Tras finalizar el Grado Superior de DAM y las 500 horas de prácticas en empresa, tengo muchísimas ganas de aprender y crecer en equipos que construyan software con impacto.",
-    emphasis: ["ganas de aprender"],
+      "Tras varios años liderando equipos y coordinando instalaciones deportivas, di el salto al desarrollo de software graduándome en DAM. Esa experiencia previa me ha dado una visión de negocio y una capacidad para resolver problemas bajo presión que ahora aplico al código.",
     icon: "rocket",
     accent: "cyan",
   },
   {
-    title: "Stack y experiencia",
+    title: "Mi stack tecnológico",
     description:
-      "Hasta ahora he trabajado con Java y Python, frameworks como React y Spring Boot, bases de datos tanto relacionales como no relacionales (MongoDB) y entornos de desarrollo como Android Studio.",
-    emphasis: ["Java", "Python", "React", "(MongoDB)", "Android Studio"],
+      "En el frontend trabajo principalmente con React, TypeScript y Tailwind CSS. En el backend y bases de datos tengo experiencia con Java, Spring Boot y MongoDB, además de manejar CMS Headless en arquitecturas desacopladas.",
       icon: "code",
     accent: "sky",
   },
   {
-    title: "Qué busco",
+    title: "Qué busco aportar",
     description:
-      "Busco mi primera incorporación en el sector tech, donde pueda seguir formándome y seguir trabajando en proyectos reales como he hecho en mis prácticas con Naviria Labs.",
-    emphasis: ["primera incorporación", "formándome", "vacantes en toda España"],
+      "Tras terminar mis prácticas, busco un entorno donde consolidar mi perfil Full Stack. Me gustaría integrarme en un equipo donde pueda aportar mis habilidades de comunicación, mi autonomía y mis ganas de construir proyectos con impacto real.",
       icon: "target",
     accent: "fuchsia",
   },

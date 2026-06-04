@@ -69,7 +69,7 @@ export const projects: Project[] = [
     id: "portfolio-javifullstack",
     title: "javifullstack.dev | Portfolio personal",
     description:
-      "Un portfolio y CV dinámico como carta de presentación: diseñado con arquitectura App Router, contenido editable en TypeScript sin tocar la UI, generación de PDF desde los mismos datos, tema claro/oscuro, animaciones y secciones modulares (proyectos, skills, timeline, certificaciones). Código abierto y listo para Vercel.",
+      "Portfolio dinámico y modular diseñado con arquitectura App Router. Desarrollado con Next.js y TypeScript, integrando modo oscuro, animaciones con Framer Motion y generación automática de CV en PDF a partir de los datos de la app.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     id: "blog-insights",
     title: "Blog Insights | Upgrade Hub",
     description:
-      "Mi primer proyecto real: un blog con CMS integrado, hero visual, filtrado de posts, CTAs de conversión y maquetación responsive para el ecosistema Upgrade Hub",
+      "Desarrollo frontend de un blog corporativo integrado con un CMS Headless para la gestión dinámica de contenidos. Incluye filtrado avanzado de artículos, optimización de CTAs y diseño 100% responsive.",
     stack: ["HTML5", "CSS3", "Next.js", "TypeScript", "Tailwind CSS", "Responsive"],
     demoUrl: "https://www.upgrade-hub.com/insights/",
     images: [
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     id: "landing-csic",
     title: "Landing Page CSIC | Upgrade Hub",
     description:
-      "Landing diseñada para la formación digital del CSIC (Consejo Superior de Investigaciones Científicas): heros con CTAs, navegación clara y diseño responsive alineado con la identidad Upgrade Hub",
+      "Landing page institucional enfocada a la captación para la formación digital del CSIC. Maquetación píxel-perfect alineada con la identidad de marca, navegación optimizada y desarrollo de componentes reutilizables.",
     stack: ["HTML5", "CSS3", "Next.js", "TypeScript", "Tailwind CSS", "Responsive"],
     demoUrl: "https://landing.upgrade-hub.com/itinerario-csic/",
     images: [

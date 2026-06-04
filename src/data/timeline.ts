@@ -12,19 +12,19 @@ export const timeline: TimelineEntry[] = [
   {
     id: "practicas",
     period: "2026",
-    title: "Prácticas en empresa",
+    title: "Frontend Developer Trainee",
     organization: "Naviria Labs",
     description:
-      "Como parte del equipo de Naviria Labs, participé en el diseño íntegro del blog Insights de Upgrade Hub y en el desarrollo de la landing page para la formación tech de los miembros del CSIC (Consejo Superior de Investigaciones Científicas).",
+      "Desarrollo frontend y maquetación responsive para proyectos corporativos, como el blog Insights de Upgrade Hub y la landing page del CSIC. Trabajo directo con Next.js, Tailwind CSS y consumo de datos mediante CMS Headless (Sanity) en un entorno real de producción",
     type: "experience",
   },
   {
     id: "dam",
     period: "2024 — 2026",
-    title: "Grado Superior DAM",
+    title: "Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
     organization: "Upgrade Hub",
     description:
-      "Después de tantos años trabajando en el sector del fitness, decidí dar un giro a mi carrera y dedicarme al desarrollo de software. En el grado superior de DAM me he formado en el desarrollo web y móvil, programación orientada a objetos con Java y Python, bases de datos y entornos de desarrollo.",
+      "Especialización práctica en desarrollo web y móvil (React, Java, Spring Boot, bases de datos). Como proyecto final, co-desarrollé Zendr, una aplicación multiplataforma para reservas y geolocalización deportiva, gestionando la arquitectura, la división de tareas y el control de versiones con Git.",
     type: "education",
   },
   {
@@ -33,7 +33,7 @@ export const timeline: TimelineEntry[] = [
     title: "Club Manager",
     organization: "Synergym",
     description:
-      "El deporte siempre ha sido una de mis grandes pasiones, y en Synergym tuve la oportunidad de crecer como profesional y llegar a ser Club Manager de uno de los clubs más grandes de España.",
+      "Gestión integral de la operativa diaria en un club de gran volumen. Liderazgo de equipos, resolución de incidencias en tiempo real, análisis de KPIs de negocio y atención directa al cliente. Habilidades de organización y resolución de problemas bajo presión que ahora aplico al ciclo de desarrollo de software.",
     type: "other",
   },
 ];

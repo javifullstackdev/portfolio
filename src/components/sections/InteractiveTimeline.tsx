@@ -121,7 +121,7 @@ function TimelineRow({
             card,
           )}
         >
-          {/* Escritorio: cabecera + descripción en columna, ancho completo */}
+          {/* Desktop */}
           <div className="hidden w-full flex-col md:flex">
             <header className="space-y-1 px-5 pb-3 pt-4">
               <p className="font-mono text-[11px] leading-none text-muted">
@@ -144,7 +144,7 @@ function TimelineRow({
             </p>
           </div>
 
-          {/* Móvil: resumen compacto + descripción al tocar */}
+          {/* Mobile */}
           <div
             role="button"
             tabIndex={0}

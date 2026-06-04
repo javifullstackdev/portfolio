@@ -11,11 +11,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Skills />
-      {isCertificationsSectionVisible() ? <Certifications /> : null}
       <Projects />
+      <Skills />
       <Education />
+      <Certifications />
+      <About />
       <Contact />
     </>
   );
